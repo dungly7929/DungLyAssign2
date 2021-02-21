@@ -1,4 +1,14 @@
 <!--Name: DUNG LY         ID:N01327929  -->
 <resources>
     <string name="app_name">DungLyN01327929</string>
+    <string name="help">Help</string>
+    <string name="menudungly">DungLy</string>
+    <string name="menupizza">Pizza</string>
+    <string name="cbcurl">https://www.cbc.ca/</string>
+    <string name="pizaurl">https://www.pizzapizza.ca/store/1/delivery</string>
+    <string name="dunglymenutoast">Mon nom est: DUNG LY (Danny)</string>
+    <string name="pizza_pizza">Pizza Pizza</string>
+    <string name="pizza_hut">Pizza Hut</string>
+    <string name="pizza_nova">Pizza Nova</string>
+    <string name="pizza_domino">Pizza Domino</string>
 </resources>

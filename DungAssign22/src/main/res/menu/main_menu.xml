@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single" >
+        <item
+            android:id="@+id/dunglymenuhelp"
+            android:title="@string/help" />
+        <item
+            android:id="@+id/dunglymenupiz"
+            android:title="@string/menupizza"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/dunglymenuname"
+            android:title="@string/menudungly"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>
