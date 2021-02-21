@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ExpandableListAdapter;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -66,25 +67,39 @@ public class DungActivity extends AppCompatActivity {
         }
     }
     //Switch case for each pizza order activity
-    public void next(View v)
+    public void nextorder(View v)
     {
-        Intent intent = new Intent(this)
-        switch (clicked)
+        Intent intent = null;
+
+        try
         {
-            case "pizapiza":
+            switch (clicked)
+            {
+                case "pizapiza":
+                    intent = new Intent(DungActivity.this,LyActivity2.class);
+                    intent.putExtra("PIZZA_HUT",R.drawable.pizzahut);
+                    startActivity(intent);
+                    break;
 
-            break;
+                case "hut":
+                    intent = new Intent(DungActivity.this,LyActivity2.class);
+                    startActivity(intent);
+                    break;
 
-            case "hut":
+                case "domi":
 
-            break;
+                    break;
+                case "nova":
 
-            case "domi":
+                    break;
+                default:
 
-            break;
-            case "nova":
+                    break;
+            }
+        }
+        catch (Exception e)
+        {
 
-            break;
         }
 
     }
@@ -96,7 +111,7 @@ public class DungActivity extends AppCompatActivity {
             switch (v.getId())
             {
                 case R.id.imgbtnpizapiza:
-                    Click = "pizapiza";
+                    clicked = "pizapiza";
                     break;
                 case R.id.imgbtnpizzahut:
                     clicked = "hut";
@@ -108,7 +123,7 @@ public class DungActivity extends AppCompatActivity {
                     clicked = "nova";
                     break;
                 default:
-                    clicked = flase;
+                    clicked = "";
                     break;
             }
         }

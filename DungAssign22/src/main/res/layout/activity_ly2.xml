@@ -7,7 +7,7 @@
     tools:context=".LyActivity2">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgvlogo"
         android:layout_width="0dp"
         android:layout_height="117dp"
 
@@ -83,7 +83,7 @@
         android:text="@string/topping"
         app:layout_constraintBottom_toTopOf="@+id/checkBox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/imgvlogo" />
 
     <TextView
         android:id="@+id/textView8"

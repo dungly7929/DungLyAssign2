@@ -9,11 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DungAssign2">
-        <activity android:name=".LyActivity2"></activity>
-        <activity
-            android:name=".DungActivity"
-
-            >
+        <activity android:name=".LyActivity3"></activity>
+        <activity android:name=".LyActivity2" />
+        <activity android:name=".DungActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
