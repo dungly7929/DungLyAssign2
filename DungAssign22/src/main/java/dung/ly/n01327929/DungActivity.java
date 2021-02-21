@@ -18,11 +18,12 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class DungActivity extends AppCompatActivity {
-    String clicked;
+    private String clicked;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this,LyActivity2.class);
         Button bntnext = (Button) findViewById(R.id.btnnext);
         ImageButton imgpiz = (ImageButton) findViewById(R.id.imgbtnpizapiza);
         ImageButton imghut = (ImageButton)  findViewById(R.id.imgbtnpizzahut);
@@ -32,6 +33,40 @@ public class DungActivity extends AppCompatActivity {
         imghut.setOnClickListener(new clickcase());
         imgDo.setOnClickListener(new clickcase());
         imgnova.setOnClickListener(new clickcase());
+        bntnext.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if(clicked.equals("hut"))
+                {
+                   intent.putExtra("Key_1",clicked);
+                   startActivity(intent);
+                }
+                else if(clicked.equals("pizapiza"))
+                {
+                    intent.putExtra("Key_1",clicked);
+                    startActivity(intent);
+                }
+                else if(clicked.equals("domi"))
+                {
+                    intent.putExtra("Key_1",clicked);
+                    startActivity(intent);
+                }
+                else if(clicked.equals("nova"))
+                {
+                    intent.putExtra("Key_1",clicked);
+                    startActivity(intent);
+                }
+                else
+                {
+
+                    Toast toast = Toast.makeText(DungActivity.this, R.string.toastres,Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.LEFT | Gravity.TOP,20,30);
+                    toast.show();
+                }
+
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -67,42 +102,7 @@ public class DungActivity extends AppCompatActivity {
         }
     }
     //Switch case for each pizza order activity
-    public void nextorder(View v)
-    {
-        Intent intent = null;
 
-        try
-        {
-            switch (clicked)
-            {
-                case "pizapiza":
-                    intent = new Intent(DungActivity.this,LyActivity2.class);
-                    intent.putExtra("PIZZA_HUT",R.drawable.pizzahut);
-                    startActivity(intent);
-                    break;
-
-                case "hut":
-                    intent = new Intent(DungActivity.this,LyActivity2.class);
-                    startActivity(intent);
-                    break;
-
-                case "domi":
-
-                    break;
-                case "nova":
-
-                    break;
-                default:
-
-                    break;
-            }
-        }
-        catch (Exception e)
-        {
-
-        }
-
-    }
     public class clickcase implements  View.OnClickListener
     {
 
@@ -128,6 +128,8 @@ public class DungActivity extends AppCompatActivity {
             }
         }
     }
+
+
     @Override
     public void onBackPressed()
     {

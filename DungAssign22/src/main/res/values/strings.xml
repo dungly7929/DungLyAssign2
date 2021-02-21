@@ -25,4 +25,5 @@
     <string name="large">Large</string>
     <string name="new_york">New York</string>
     <string name="seafood">Seafood</string>
+    <string name="toastres">Please choose the pizza restaurant you want !</string>
 </resources>
