@@ -1,0 +1,2 @@
+include ':DungAssign22'
+rootProject.name = "DungAssign2"
