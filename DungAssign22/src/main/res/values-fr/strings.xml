@@ -26,4 +26,9 @@
     <string name="new_york">New York</string>
     <string name="seafood">Seafood</string>
     <string name="toastres">Please choose the pizza restaurant you want !</string>
+    <string name="restaurantlink">Please choose the Restaurant to get link</string>
+    <string name="pizzapizzalink">https://www.pizzapizza.ca/</string>
+    <string name="pizzahutlink">https://www.pizzahut.ca/</string>
+    <string name="pizzadominolink">https://www.dominos.ca/</string>
+    <string name="pizzanovalink">https://pizzanova.com/</string>
 </resources>

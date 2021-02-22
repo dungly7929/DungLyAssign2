@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.602" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/pizzasizegroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,7 +87,7 @@
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/pizzatypegroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

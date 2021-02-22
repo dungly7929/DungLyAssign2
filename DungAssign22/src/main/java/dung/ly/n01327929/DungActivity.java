@@ -20,7 +20,7 @@ import android.widget.Toast;
 import java.util.zip.Inflater;
 
 public class DungActivity extends AppCompatActivity {
-    private String clicked,webview;
+    private String clicked = null,webview;
     private Menu menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,37 +36,45 @@ public class DungActivity extends AppCompatActivity {
         imghut.setOnClickListener(new clickcase());
         imgDo.setOnClickListener(new clickcase());
         imgnova.setOnClickListener(new clickcase());
+
+        //Check the click event for button next
         bntnext.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) {
-                if(clicked.equals("hut"))
+            public void onClick(View v)
+            {
+                try
                 {
-                   intent.putExtra("Key_1",clicked);
-                   startActivity(intent);
+                    if(clicked.equals("hut"))
+                    {
+                        intent.putExtra("Key_1",clicked);
+                        intent.putExtra("Key_2",webview);
+                        startActivity(intent);
+                    }
+                    else if(clicked.equals("pizapiza"))
+                    {
+                        intent.putExtra("Key_1",clicked);
+                        intent.putExtra("Key_2",webview);
+                        startActivity(intent);
+                    }
+                    else if(clicked.equals("domi"))
+                    {
+                        intent.putExtra("Key_1",clicked);
+                        intent.putExtra("Key_2",webview);
+                        startActivity(intent);
+                    }
+                    else if(clicked.equals("nova"))
+                    {
+                        intent.putExtra("Key_1",clicked);
+                        intent.putExtra("Key_2",webview);
+                        startActivity(intent);
+                    }
                 }
-                else if(clicked.equals("pizapiza"))
+                catch (NullPointerException e)
                 {
-                    intent.putExtra("Key_1",clicked);
-                    startActivity(intent);
+                    Toast.makeText(DungActivity.this, R.string.toastres,Toast.LENGTH_LONG).show();
                 }
-                else if(clicked.equals("domi"))
-                {
-                    intent.putExtra("Key_1",clicked);
-                    startActivity(intent);
-                }
-                else if(clicked.equals("nova"))
-                {
-                    intent.putExtra("Key_1",clicked);
-                    startActivity(intent);
-                }
-                else
-                {
 
-                    Toast toast = Toast.makeText(DungActivity.this, R.string.toastres,Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.LEFT | Gravity.TOP,20,30);
-                    toast.show();
-                }
 
             }
         });
@@ -79,6 +87,7 @@ public class DungActivity extends AppCompatActivity {
         return true;
     }
 
+    //Function for Menuitem when selected
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -98,7 +107,7 @@ public class DungActivity extends AppCompatActivity {
             }
             else
             {
-                Toast toast = Toast.makeText(DungActivity.this, "Please choose the Restaurant to get link",Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(DungActivity.this, R.string.restaurantlink,Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.LEFT | Gravity.TOP,20,30);
                 toast.show();
             }
@@ -127,24 +136,24 @@ public class DungActivity extends AppCompatActivity {
             {
                 case R.id.imgbtnpizapiza:
                     menu.getItem(1).setIcon(R.drawable.pizzapizza);
-                    webview = "https://www.pizzapizza.ca/";
+                    webview = getString(R.string.pizzapizzalink);
                     clicked = "pizapiza";
 
                     break;
                 case R.id.imgbtnpizzahut:
                     menu.getItem(1).setIcon(R.drawable.pizzahut);
-                    webview = "https://www.pizzahut.ca/";
+                    webview = getString(R.string.pizzahutlink);
                     clicked = "hut";
                     break;
                 case R.id.imgbtndomi:
                     menu.getItem(1).setIcon(R.drawable.dominopizza);
-                    webview = "https://www.dominos.ca/";
+                    webview = getString(R.string.pizzadominolink);
                     clicked = "domi";
                     break;
                 case R.id.imgbtnpnova:
                     clicked = "nova";
                     menu.getItem(1).setIcon(R.drawable.pizzanova);
-                    webview = "https://pizzanova.com/";
+                    webview = getString(R.string.pizzanovalink);
                     break;
                 default:
                     clicked = "";
@@ -152,7 +161,6 @@ public class DungActivity extends AppCompatActivity {
             }
         }
     }
-
 
     @Override
     public void onBackPressed()
