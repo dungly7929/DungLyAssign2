@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dungactivity2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DungActivity">
@@ -31,7 +32,7 @@
         android:layout_marginBottom="8dp"
         android:scaleType="fitCenter"
         android:background="?android:selectableItemBackground"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/textvhut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgbtnpizapiza"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,10 +47,10 @@
         android:layout_marginBottom="15dp"
         android:scaleType="fitCenter"
         android:background="?android:selectableItemBackground"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/textvnova"
         app:layout_constraintEnd_toStartOf="@+id/imgbtndomi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textvpizapiza"
         app:srcCompat="@drawable/pizzanova" />
 
     <ImageButton
@@ -60,38 +61,38 @@
         android:layout_marginBottom="15dp"
         android:scaleType="fitCenter"
         android:background="?android:selectableItemBackground"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/textvdomino"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgbtnpnova"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textvhut"
         app:srcCompat="@drawable/dominopizza" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textvpizapiza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="34dp"
         android:text="@string/pizza_pizza"
         app:layout_constraintBottom_toTopOf="@+id/imgbtnpnova"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/textvhut"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgbtnpizapiza" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textvnova"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginBottom="314dp"
         android:text="@string/pizza_nova"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/textvdomino"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgbtnpnova" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textvhut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
@@ -99,11 +100,11 @@
         android:text="@string/pizza_hut"
         app:layout_constraintBottom_toTopOf="@+id/imgbtndomi"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textvpizapiza"
         app:layout_constraintTop_toBottomOf="@+id/imgbtnpizzahut" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textvdomino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
@@ -111,7 +112,7 @@
         android:text="@string/pizza_domino"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/textvnova"
         app:layout_constraintTop_toBottomOf="@+id/imgbtndomi" />
 
     <Button
@@ -122,6 +123,7 @@
         android:onClick="nextorder"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/imgbtnpizapiza" />
+        app:layout_constraintStart_toEndOf="@+id/textvnova"
+        app:layout_constraintTop_toBottomOf="@+id/imgbtnpizapiza"
+        tools:ignore="OnClick" />
 </androidx.constraintlayout.widget.ConstraintLayout>

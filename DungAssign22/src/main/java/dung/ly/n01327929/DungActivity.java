@@ -17,8 +17,11 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.zip.Inflater;
+
 public class DungActivity extends AppCompatActivity {
-    private String clicked;
+    private String clicked,webview;
+    private Menu menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +75,7 @@ public class DungActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        this.menu = menu;
         return true;
     }
 
@@ -87,9 +91,18 @@ public class DungActivity extends AppCompatActivity {
             return true;
 
             case R.id.dunglymenupiz:
-            intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.pizaurl)));
-            startActivity(intent);
-            return true;
+            if (webview !=null)
+            {
+                intent =  new Intent(Intent.ACTION_VIEW, Uri.parse(webview));
+                startActivity(intent);
+            }
+            else
+            {
+                Toast toast = Toast.makeText(DungActivity.this, "Please choose the Restaurant to get link",Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.LEFT | Gravity.TOP,20,30);
+                toast.show();
+            }
+                return true;
 
             case R.id.dunglymenuname:
              Toast toast = Toast.makeText(DungActivity.this, R.string.dunglymenutoast,Toast.LENGTH_LONG);
@@ -108,19 +121,30 @@ public class DungActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+
+
             switch (v.getId())
             {
                 case R.id.imgbtnpizapiza:
+                    menu.getItem(1).setIcon(R.drawable.pizzapizza);
+                    webview = "https://www.pizzapizza.ca/";
                     clicked = "pizapiza";
+
                     break;
                 case R.id.imgbtnpizzahut:
+                    menu.getItem(1).setIcon(R.drawable.pizzahut);
+                    webview = "https://www.pizzahut.ca/";
                     clicked = "hut";
                     break;
                 case R.id.imgbtndomi:
+                    menu.getItem(1).setIcon(R.drawable.dominopizza);
+                    webview = "https://www.dominos.ca/";
                     clicked = "domi";
                     break;
                 case R.id.imgbtnpnova:
                     clicked = "nova";
+                    menu.getItem(1).setIcon(R.drawable.pizzanova);
+                    webview = "https://pizzanova.com/";
                     break;
                 default:
                     clicked = "";

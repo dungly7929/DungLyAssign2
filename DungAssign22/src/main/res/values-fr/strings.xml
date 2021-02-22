@@ -11,4 +11,19 @@
     <string name="pizza_hut">Pizza Hut</string>
     <string name="pizza_nova">Pizza Nova</string>
     <string name="pizza_domino">Pizza Domino</string>
+    <string name="next">NEXT</string>
+    <string name="cheese">Cheese</string>
+    <string name="sausage">Sausage</string>
+    <string name="bell_pepper">Bell Pepper</string>
+    <string name="bacon">Bacon</string>
+    <string name="pine_apple">PineApple</string>
+    <string name="pizza_size">Pizza Size</string>
+    <string name="topping">Topping</string>
+    <string name="pizza_type">Pizza Type</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="new_york">New York</string>
+    <string name="seafood">Seafood</string>
+    <string name="toastres">Please choose the pizza restaurant you want !</string>
 </resources>

@@ -63,7 +63,7 @@
         app:srcCompat="@drawable/dominopizza" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textvpizapiza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pizza_pizza"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.566" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textvhut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pizza_hut"
@@ -87,7 +87,7 @@
         app:layout_constraintVertical_bias="0.566" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textvdomino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pizza_domino"
@@ -115,11 +115,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next"
+        android:onClick="nextorder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintVertical_bias="0.754"
+        tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

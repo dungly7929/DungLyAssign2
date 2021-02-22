@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,15 @@ public class LyActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_ly2);
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        return true;
+    }
+
     @Override
     protected void  onStart()
     {
@@ -31,15 +42,15 @@ public class LyActivity2 extends AppCompatActivity {
             {
                 imgv.setImageResource(R.drawable.pizzahut);
             }
-            if(click.equalsIgnoreCase("pizapiza"))
+            else if(click.equalsIgnoreCase("pizapiza"))
             {
                 imgv.setImageResource(R.drawable.pizzapizza);
             }
-            if(click.equalsIgnoreCase("domi"))
+            else if(click.equalsIgnoreCase("domi"))
             {
                 imgv.setImageResource(R.drawable.dominopizza);
             }
-            if(click.equalsIgnoreCase("nova"))
+            else if(click.equalsIgnoreCase("nova"))
             {
                 imgv.setImageResource(R.drawable.pizzanova);
             }
