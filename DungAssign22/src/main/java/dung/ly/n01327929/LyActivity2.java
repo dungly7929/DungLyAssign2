@@ -35,6 +35,7 @@ public class LyActivity2 extends AppCompatActivity
     CheckBox cbbacon,cbsausage,cbcheese,cbbellpp,cbpineapple;
     RadioGroup radioGroupsize,radioGrouptype;
     private String webview= "";
+    private String click;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -207,6 +208,8 @@ public class LyActivity2 extends AppCompatActivity
               {
                 bundle.putString("Pizza_type",rbtntypetext);
                 bundle.putString("Pizza_size",rbtnsizetext);
+                bundle.putString("Web_key",webview);
+                bundle.putString("Click_key",click);
                 bundle.putStringArrayList("Pizza_topping",list);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -299,7 +302,7 @@ public class LyActivity2 extends AppCompatActivity
         ImageView imgv = (ImageView) findViewById(R.id.imgvlogo);
         if(intent!=null)
         {
-            String click = intent.getStringExtra("Key_1");
+            click = intent.getStringExtra("Key_1");
             webview = intent.getStringExtra("Key_2");
             if(click.equalsIgnoreCase("hut"))
             {

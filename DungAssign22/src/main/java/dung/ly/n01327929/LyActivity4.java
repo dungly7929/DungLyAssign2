@@ -11,4 +11,5 @@ public class LyActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ly4);
     }
+
 }

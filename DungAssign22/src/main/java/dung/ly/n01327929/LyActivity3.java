@@ -3,7 +3,9 @@ package dung.ly.n01327929;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +26,8 @@ public class LyActivity3 extends AppCompatActivity {
     EditText edittextname,edittextaddress,edittextcard,edittextdate,editextcvv;
     Button bntorder;
     ArrayList<String> list,spinnerlist = new ArrayList<String>();
-    String bdpizsize, bdpiztype, cb = "",txtname,txtaddress,txtcard,txtcvv,txtdate,txtprovince;
+    String bdpizsize, bdpiztype, cb = "",txtname,txtaddress,txtcard,txtcvv,txtdate,txtprovince,click;
+    private String webview = "";
     String [] provincelist = {"Nunavut", "British Columbia","Alberta","Saskatchewan","Manitoba","Ontario",
             "Quebec","Newfoundland and Labrador","Nova Scotia","Prince Edward Island"};
     TextView txtvsize,txttype,txtvtopping;
@@ -37,27 +41,8 @@ public class LyActivity3 extends AppCompatActivity {
         spinnerprocreate();
         intent = getIntent();
         bundle = intent.getExtras();
-        if(bundle != null)
-        {
-            bdpizsize = bundle.getString("Pizza_type","");
-            bdpiztype = bundle.getString("Pizza_size","");
-            list = bundle.getStringArrayList("Pizza_topping");
-            for(int i = 0 ; i <list.size() ; i++)
-            {
-                if(i == (list.size() - 1))
-                {
-                    cb += list.get(i)+ ".";
-                }
-                else
-                {
-                    cb += list.get(i) + ",";
-                }
+        ImageView imgv = (ImageView) findViewById(R.id.imgvlogo);
 
-            }
-            txtvsize.setText("Pizza Size: " + bdpizsize);
-            txttype.setText("Pizza type: " + bdpiztype);
-            txtvtopping.setText("Pizza Topping: " + cb);
-        }
         orderplace();
 
 
@@ -112,8 +97,13 @@ public class LyActivity3 extends AppCompatActivity {
                 }
                 else
                 {
-
-
+                    Intent intent1 = new Intent(LyActivity3.this, LyActivity4.class);
+                    Bundle bundle1 = new Bundle();
+                    bundle1.putString("Key_name",txtname);
+                    bundle1.putString("Key_address",txtaddress);
+                    bundle1.putString("Key_province",txtprovince);
+                    intent1.putExtras(bundle1);
+                    startActivity(intent1);
                 }
 
             }
@@ -135,7 +125,10 @@ public class LyActivity3 extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    txtprovince = spinnerlist.get(position);
+
+                    txtprovince = spinnerlist.get(position).toString();
+
+
             }
 
             @Override
@@ -177,6 +170,41 @@ public class LyActivity3 extends AppCompatActivity {
                 return true;
         }
         return  true;
+    }
+
+    @Override
+    protected void  onStart()
+    {
+        super.onStart();
+        ImageView imgv = (ImageView) findViewById(R.id.imgvlogo);
+        if(bundle != null)
+        {
+            bdpizsize = bundle.getString("Pizza_type","");
+            bdpiztype = bundle.getString("Pizza_size","");
+            webview = bundle.getString("Web_key","");
+            click = bundle.getString("Click_key","");
+            list = bundle.getStringArrayList("Pizza_topping");
+            for(int i = 0 ; i <list.size() ; i++)
+            {
+                if(i == (list.size() - 1))
+                {
+                    cb += list.get(i)+ ".";
+                }
+                else
+                {
+                    cb += list.get(i) + ",";
+                }
+
+            }
+
+            txtvsize.setText("Pizza Size: " + bdpizsize);
+            txttype.setText("Pizza type: " + bdpiztype);
+            txtvtopping.setText("Pizza Topping: " + cb);
+            if(click.equalsIgnoreCase("hut"))
+            {
+                Toast.makeText(LyActivity3.this,click,Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 }
