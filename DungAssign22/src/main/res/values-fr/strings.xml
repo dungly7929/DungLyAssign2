@@ -40,4 +40,10 @@
     <string name="cvv">cvv</string>
     <string name="pizza_information">Pizza Information:</string>
     <string name="order">Order</string>
+    <string name="check_out">Check out</string>
+    <string name="full_name1">Full Name:</string>
+    <string name="order_information">Order Information</string>
+    <string name="pizza_information1">Pizza information</string>
+    <string name="card">Card</string>
+    <string name="ccv">CCV</string>
 </resources>

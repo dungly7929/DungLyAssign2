@@ -41,7 +41,7 @@ public class LyActivity4 extends AppCompatActivity {
             {
                 AlertDialog.Builder dialogb = new AlertDialog.Builder(LyActivity4.this);
                 dialogb.setTitle("Order Confirmed !");
-                dialogb.setMessage("Your order number is :" + confirmnumber);
+                dialogb.setMessage("Your order number is : " + confirmnumber + "\n Time to Pickup: "+ date);
                 dialogb.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which)
