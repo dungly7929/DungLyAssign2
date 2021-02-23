@@ -6,7 +6,7 @@ Use the android Studio to install The app.
 
 ## Information
 The Application use to Order Pizza with options Topping, size , type.
-The Menu ActionBar auto Change logo to each Restaurant user choose ().
+The Menu ActionBar auto Change logo to each Restaurant user choose (Arrow use to back to the 1st Screen).
 
 ## Screen 1: 
 User can choose the logo of restaurant and click next it will go to The Order Screen.
