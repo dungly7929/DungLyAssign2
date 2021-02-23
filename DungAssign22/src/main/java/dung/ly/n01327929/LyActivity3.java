@@ -97,13 +97,20 @@ public class LyActivity3 extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent intent1 = new Intent(LyActivity3.this, LyActivity4.class);
-                    Bundle bundle1 = new Bundle();
-                    bundle1.putString("Key_name",txtname);
-                    bundle1.putString("Key_address",txtaddress);
-                    bundle1.putString("Key_province",txtprovince);
-                    intent1.putExtras(bundle1);
-                    startActivity(intent1);
+                    Intent intent2 = new Intent(LyActivity3.this, LyActivity4.class);
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString("Key_name",txtname);
+                    bundle2.putString("Key_address",txtaddress);
+                    bundle2.putString("Key_province",txtprovince);
+                    bundle2.putString("Key_card",txtcard);
+                    bundle2.putString("Key_date",txtdate);
+                    bundle2.putString("Key_cvv",txtcvv);
+                    bundle2.putString("Key_web",webview);
+                    bundle2.putString("Key_psize",bdpizsize);
+                    bundle2.putString("Key_ptype",bdpiztype);
+                    bundle2.putString("Key_pcb",cb);
+                    intent2.putExtras(bundle2);
+                    startActivity(intent2);
                 }
 
             }
@@ -157,32 +164,68 @@ public class LyActivity3 extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        if(webview.equals(getString(R.string.pizzapizzalink)))
+        {
+            menu.getItem(1).setIcon(R.drawable.pizzapizza);
+        }
+        if(webview.equals(getString(R.string.pizzahutlink)))
+        {
+            menu.getItem(1).setIcon(R.drawable.pizzahut);
+        }
+        if(webview.equals(getString(R.string.pizzadominolink)))
+        {
+            menu.getItem(1).setIcon(R.drawable.dominopizza);
+        }
+        if(webview.equals(getString(R.string.pizzanovalink)))
+        {
+            menu.getItem(1).setIcon(R.drawable.pizzanova);
+        }
+        return true;
 
-        return  true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        switch (item.getItemId()) {
+        intent = null;
+        switch (item.getItemId())
+        {
             case android.R.id.home:
-                finish();
+                intent = new Intent(LyActivity3.this,DungActivity.class);
+                startActivity(intent);
                 return true;
+
+            case R.id.dunglymenuhelp:
+                intent =  new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.cbcurl)));
+                startActivity(intent);
+                return true;
+
+            case R.id.dunglymenupiz:
+                intent =  new Intent(Intent.ACTION_VIEW, Uri.parse(webview));
+                startActivity(intent);
+
+                return true;
+
+            case R.id.dunglymenuname:
+                Toast toast = Toast.makeText(LyActivity3.this, R.string.dunglymenutoast,Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.LEFT | Gravity.TOP,20,30);
+                toast.show();
+                return true;
+
+            default:
+                return  super.onOptionsItemSelected(item);
         }
-        return  true;
     }
 
     @Override
     protected void  onStart()
     {
         super.onStart();
-        ImageView imgv = (ImageView) findViewById(R.id.imgvlogo);
         if(bundle != null)
         {
             bdpizsize = bundle.getString("Pizza_type","");
             bdpiztype = bundle.getString("Pizza_size","");
             webview = bundle.getString("Web_key","");
-            click = bundle.getString("Click_key","");
             list = bundle.getStringArrayList("Pizza_topping");
             for(int i = 0 ; i <list.size() ; i++)
             {
@@ -200,10 +243,6 @@ public class LyActivity3 extends AppCompatActivity {
             txtvsize.setText("Pizza Size: " + bdpizsize);
             txttype.setText("Pizza type: " + bdpiztype);
             txtvtopping.setText("Pizza Topping: " + cb);
-            if(click.equalsIgnoreCase("hut"))
-            {
-                Toast.makeText(LyActivity3.this,click,Toast.LENGTH_SHORT).show();
-            }
         }
     }
 

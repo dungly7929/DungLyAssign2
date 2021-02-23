@@ -209,7 +209,6 @@ public class LyActivity2 extends AppCompatActivity
                 bundle.putString("Pizza_type",rbtntypetext);
                 bundle.putString("Pizza_size",rbtnsizetext);
                 bundle.putString("Web_key",webview);
-                bundle.putString("Click_key",click);
                 bundle.putStringArrayList("Pizza_topping",list);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -268,7 +267,8 @@ public class LyActivity2 extends AppCompatActivity
         switch (item.getItemId())
         {
             case android.R.id.home:
-                finish();
+                intent = new Intent(LyActivity2.this,DungActivity.class);
+                startActivity(intent);
                 return true;
 
             case R.id.dunglymenuhelp:

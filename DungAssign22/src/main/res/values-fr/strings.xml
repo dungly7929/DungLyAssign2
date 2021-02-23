@@ -31,4 +31,13 @@
     <string name="pizzahutlink">https://www.pizzahut.ca/</string>
     <string name="pizzadominolink">https://www.dominos.ca/</string>
     <string name="pizzanovalink">https://pizzanova.com/</string>
+    <string name="full_name">Full Name</string>
+    <string name="address">Address</string>
+    <string name="province">Province</string>
+    <string name="payment_information">Payment information</string>
+    <string name="card_number_limit_16_digits">Card number limit 16 digits</string>
+    <string name="date">Date</string>
+    <string name="cvv">cvv</string>
+    <string name="pizza_information">Pizza Information:</string>
+    <string name="order">Order</string>
 </resources>
